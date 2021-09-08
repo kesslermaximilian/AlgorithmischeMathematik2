@@ -5,11 +5,15 @@ TEXINPUTS=LatexPackages//:
 full: 
 	@TEXINPUTS=${TEXINPUTS} latexmk -pdf -dvi- full.tex
 
+master:
 	@TEXINPUTS=${TEXINPUTS} latexmk -pdf -dvi master.tex
 
 # Runs pdflatex on the full document
 full-pdflatex: 
 	@TEXINPUTS=${TEXINPUTS} pdflatex full.tex
+
+master-pdflatex:
+	@TEXINPUTS=${TEXINPUTS} pdflatex master.tex
 
 
 # Initializes the submodule, i.e. clones it correctly
