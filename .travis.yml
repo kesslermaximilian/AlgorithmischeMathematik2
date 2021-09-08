@@ -1,0 +1,62 @@
+sudo: true
+dist: bionic
+language: generic
+cache: apt
+
+addons:
+  apt:
+    sources:
+      - sourceline: 'ppa:jonathonf/texlive'
+    packages:
+      - wget
+      - tree
+      - texlive-latex-recommended
+      - texlive-latex-extra
+      - texlive-fonts-extra
+      - texlive-lang-german
+      - texlive-science
+      - texlive-bibtex-extra
+      - lmodern
+      - latexmk
+      - biber
+      - gnuplot
+      - make
+      
+before_install:
+  - chmod +x .travis/git-info-2.sh
+  - ".travis/git-info-2.sh"
+
+env:
+    - TEXINPUTS='LatexPackages//:'
+
+script:
+    - make full-with-gnuplots
+    - make gnuplots-master
+    - touch full.gnuplots/.gitkeep
+    - touch master.gnuplots/.gitkeep
+    - mkdir gnuplots
+    - mv full.gnuplots gnuplots
+    - mv master.gnuplots gnuplots
+    - mkdir dist
+    - mv full.pdf dist/2021_Topologie.pdf
+    - mv full.log dist/2021_Topologie.log
+    - cd dist/
+    - ls
+    - tree -H '.' -I "index.html" -D --charset utf-8 -T "Geometrie und Topologie" > index.html
+
+deploy:
+    - provider: pages
+      skip-cleanup: true
+      github-token: $GITHUB_TOKEN
+      local-dir: dist/
+      keep-history: false
+      on:
+        branch: master
+    - provider: pages
+      skip-cleanup: true
+      github-token: $GITHUB_TOKEN
+      local-dir: gnuplots/
+      keep-history: false
+      target_branch: gnuplots
+      on:
+          branch: master
