@@ -30,19 +30,13 @@ env:
     - TEXINPUTS='LatexPackages//:'
 
 script:
-    - make full-with-gnuplots
-    - make gnuplots-master
-    - touch full.gnuplots/.gitkeep
-    - touch master.gnuplots/.gitkeep
-    - mkdir gnuplots
-    - mv full.gnuplots gnuplots
-    - mv master.gnuplots gnuplots
+    - make full
     - mkdir dist
-    - mv full.pdf dist/2021_Topologie.pdf
-    - mv full.log dist/2021_Topologie.log
+    - mv full.pdf dist/2021_Algorithmische_Mathematik.pdf
+    - mv full.log dist/2021_Algorithmische_Mathematik.log
     - cd dist/
     - ls
-    - tree -H '.' -I "index.html" -D --charset utf-8 -T "Geometrie und Topologie" > index.html
+    - tree -H '.' -I "index.html" -D --charset utf-8 -T "Algorithmische Mathematik 2" > index.html
 
 deploy:
     - provider: pages
@@ -52,11 +46,3 @@ deploy:
       keep-history: false
       on:
         branch: master
-    - provider: pages
-      skip-cleanup: true
-      github-token: $GITHUB_TOKEN
-      local-dir: gnuplots/
-      keep-history: false
-      target_branch: gnuplots
-      on:
-          branch: master
