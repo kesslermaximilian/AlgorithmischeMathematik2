@@ -1,8 +1,10 @@
 [![Build Status](https://api.travis-ci.com/kesslermaximilian/AlgorithmischeMathematik2.svg)](https://travis-ci.com/kesslermaximilian/AlgorithmischeMathematik2)
 
-# Geometrie und Topologie
+# Algorithmische Mathematik II
 
-These are my lecture notes for the 'Einführung in die Geometrie und Topologie', taught by [Daniel Kasprowski](http://www.math.uni-bonn.de/people/daniel/) in the summer term 2021 at the University of Bonn. There is no guarantee for completeness or correctness.
+These are my lecture notes for the 'Algorithmische Mathematik II', taught by [Patrik Ferrari](https://wt.iam.uni-bonn.de/ferrari/home) in the summer term 2021 at the University of Bonn. There is no guarantee for completeness or correctness.
+
+Unfortunately, I stopped writing these up after approximately half of the lecture.
 
 - The homepage of the course can also be found [here](https://wt.iam.uni-bonn.de/ferrari/teaching/lectures-homepages/almaiiss19-1)
 - The [most recent version](https://kesslermaximilian.github.io/AlgorithmischeMathematik2/2021_Algorithmische_Mathematik.pdf) of this script is made available with [Travis CI](https://github.com/traviscibot). You can also have a look at the [generated log files](https://kesslermaximilian.github.io/AlgorithmischeMathematik2/2021_Algorithmische_Mathematik.log)
