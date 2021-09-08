@@ -1,0 +1,4 @@
+[submodule "LatexPackages"]
+	path = LatexPackages
+    url = https://github.com/kesslermaximilian/LatexPackages.git
+    branch = algorithmische-mathematik-2
