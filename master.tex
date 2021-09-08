@@ -1,25 +1,42 @@
-\documentclass[a4paper,german]{article}
-\input{../preamble.tex}
-\title{Algorithmische Mathematik II}
-\author{{\normalsize Dozent} \\ {\sc Professor Dr. Patrik Ferrari}}
+\documentclass[a4paper,german, git, fancyfoot]{mkessler-script}
+
+\course{Algorithmischem Mathematik II}
+\lecturer{Prof. Dr. Patrik Ferari}
+\assistant[f]{Arunima Ray}
+\author{Maximilian Keßler}
+
+\usepackage{mkessler-hypersetup}
+\usepackage{mkessler-math}
+\usepackage[lecturenumbers = true, number small environment = theorem]{mkessler-fancythm}
+\usepackage{mkessler-vocab}
+\usepackage{mkessler-bibliography}
+\usepackage[fancyhead]{mkessler-lectures}
+\usepackage{castel-figures}
+
+\usepackage{float}
+
+\usepackage{todonotes}
+
+\usepackage{import}
 \usepackage{bbm}
 
 \begin{document}
     \maketitle
-    \vspace{3em}
-    \centering \small Version \\
-    \today\; \currenttime
-    \vspace{10em}
-    \input{abstract.tex}
+
+    \import{inputs/}{abstract.tex}
+
+
     \newpage
     \tableofcontents
+
     \newpage
-    \listoflecture
-    \addcontentsline{toc}{section}{Übersicht der Vorlesungen}
+    \summaryoflectures
+
+
     \newpage
     % start lectures
-    \input{lec_12.tex}
-    \input{lec_13.tex}
+    \import{inputs/lectures/}{lec_12.tex}
+    \import{inputs/lectures/}{lec_13.tex}
     % end lectures
     \printindex
 \end{document}
