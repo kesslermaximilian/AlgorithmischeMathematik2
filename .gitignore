@@ -45,7 +45,3 @@
 
 ## pdf files
 *.pdf
-
-## Gnuplot directories
-master.gnuplots/
-full.gnuplots/
